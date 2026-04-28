@@ -2,6 +2,7 @@
 # BharatiyaSeva – Multimodal RAG for Government Scheme Discovery
 
 ![Architecture](./1.png)
+![Details](./4.png)
 ![Pipeline](./2.png)
 ![Flow](./3.png)
 
@@ -246,65 +247,9 @@ API docs: [http://localhost:8000/docs](http://localhost:8000/docs)
 
 ---
 
-### 6 – Ingest a PDF
 
-```bash
-curl -X POST http://localhost:8000/api/v1/documents/upload \
-  -F "file=@/path/to/scheme.pdf" \
-  -F "scheme_name=PM Kisan" \
-  -F "ministry=Agriculture" \
-  -F "state=All India" \
-  -F "category=Agriculture" \
-  -F "target_income_max=200000"
-```
 
-Check status:
-
-```bash
-curl http://localhost:8000/api/v1/documents/{doc_id}
-```
-
----
-
-## Project Structure
-
-```
-bharatiya_seva/
-├── .env
-├── requirements.txt
-├── app/
-│   ├── main.py
-│   ├── core/
-│   │   ├── config.py
-│   │   └── logging.py
-│   ├── api/routes/
-│   │   ├── documents.py
-│   │   ├── query.py
-│   │   ├── chat.py
-│   │   └── health.py
-│   ├── models/
-│   │   ├── document.py
-│   │   ├── chat.py
-│   │   └── query.py
-│   ├── interfaces/
-│   │   └── ingestion.py
-│   ├── db/mongodb/
-│   │   ├── client.py
-│   │   └── indexes.py
-│   ├── db/vectordb/
-│   │   └── client.py
-│   ├── repositories/
-│   │   ├── document_repository.py
-│   │   ├── chunk_repository.py
-│   │   ├── vector_repository.py
-│   │   └── chat_repository.py
-│   └── services/
-│       ├── ingestion/
-│       ├── retrieval/
-│       └── llm/
-```
-
----
+#
 
 ## Chunk Size Rationale
 
