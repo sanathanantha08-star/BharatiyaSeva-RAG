@@ -6,7 +6,6 @@ from pydantic import BaseModel
 class RetrievalRequest(BaseModel):
     query: str
     top_k: int = 5
-    # metadata filters – all optional
     state: Optional[str] = None
     category: Optional[str] = None
     ministry: Optional[str] = None
@@ -18,6 +17,12 @@ class RetrievedChunk(BaseModel):
     chunk_id: str
     text: str
     score: float
-    retriever: str                        # "vector", "bm25", "hybrid"
+    retriever: str
     metadata: Dict[str, Any] = {}
-    parent_text: Optional[str] = None    # populated after parent fetch
+    parent_text: Optional[str] = None
+
+
+class QueryResponse(BaseModel):
+    query: str
+    answer: str
+    source_chunks: List[RetrievedChunk]

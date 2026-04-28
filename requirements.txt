@@ -1,4 +1,3 @@
-
 fastapi==0.111.0
 uvicorn[standard]==0.29.0
 python-multipart==0.0.9
@@ -11,19 +10,22 @@ pymongo==4.7.2
 
 PyMuPDF==1.24.3
 
-langchain
-langchain-community
-langchain-core
-langchain-huggingface
-langchain-groq
+langchain==0.2.17
+langchain-community==0.2.19
+langchain-core==0.2.43
+langchain-text-splitters==0.2.4
+langchain-huggingface==0.0.3
+langchain-cohere==0.1.9
 
-sentence-transformers
-torch
+cohere==5.5.8
 
-numpy
+sentence-transformers==3.0.1
+torch==2.3.0
+
+numpy==1.26.4
 
 fpdf==1.7.2
 
 pytest
 pytest-asyncio
-httpx
+httpx==0.27.0
