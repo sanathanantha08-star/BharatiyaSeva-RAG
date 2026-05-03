@@ -23,6 +23,10 @@ sentence-transformers==3.0.1
 torch==2.3.0
 
 numpy==1.26.4
+openai-whisper
+soundfile
+
+gtts
 
 fpdf==1.7.2
 

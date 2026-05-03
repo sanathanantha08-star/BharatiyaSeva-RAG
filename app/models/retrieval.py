@@ -26,3 +26,10 @@ class QueryResponse(BaseModel):
     query: str
     answer: str
     source_chunks: List[RetrievedChunk]
+
+
+class AudioQueryResponse(BaseModel):
+    query: str          # transcribed text
+    answer: str         # LLM text answer
+    audio_base64: str   # mp3 base64 encoded
+    source_chunks: List[RetrievedChunk]
